@@ -21,6 +21,7 @@ export interface IImageConfiguration {
     sourceType: 'image';
     imageUri: string;
     accessRoleArn: string;
+    startCommand?: string;
 }
 
 export interface ICreateOrUpdateActionParams {
@@ -172,6 +173,7 @@ function getImageConfig(imageUri: string): IImageConfiguration {
         sourceType: 'image',
         imageUri,
         accessRoleArn: getInput('access-role-arn', { required: true }),
+        startCommand: getInput('start-command', { required: false }) || undefined,
     };
 }
 

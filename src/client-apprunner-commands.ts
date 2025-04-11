@@ -104,6 +104,7 @@ function getImageSourceConfiguration(port: number, config: IImageConfiguration, 
             ImageIdentifier: config.imageUri,
             ImageRepositoryType: getImageType(config.imageUri),
             ImageConfiguration: {
+                StartCommand: config.startCommand,
                 Port: `${port}`,
                 RuntimeEnvironmentVariables: runtimeEnvironmentVariables,
                 RuntimeEnvironmentSecrets: runtimeEnvironmentSecrets,
